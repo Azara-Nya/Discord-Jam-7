@@ -7,8 +7,11 @@ public class InkCheckPoints : MonoBehaviour
     public InkManager im;
     [SerializeField] private int Index;
 
- void OnMouseOver()  
-    {
-        im.IsInked[Index]=true;  
+ void OnTriggerEnter2D(Collider2D other)
+ {
+    if(other.CompareTag("Ink"))
+    { 
+        im.IsInked[Index]=true;
     }
+ }
 }
