@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ink : MonoBehaviour
+public class InkCheckPoints : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public InkManager im;
+    [SerializeField] private int Index;
 
-    // Update is called once per frame
-    void Update()
+ void OnMouseOver()  
     {
-        
+        im.IsInked[Index]=true;  
     }
 }
