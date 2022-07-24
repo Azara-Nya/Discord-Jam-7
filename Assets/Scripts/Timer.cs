@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] private GameObject[] hearts;
     [SerializeField] private GameObject GameOverDisplay;
+    public GameObject[] SFX;
     private bool HastLoad;
     private float CurrentTime;
     private int counter;
@@ -55,14 +56,17 @@ void Awake()
         if(health==2)
         {
             hearts[2].SetActive(false);
+            SFX[0].SetActive(true);
         }
         if(health ==1)
         {
             hearts[1].SetActive(false);
+            SFX[1].SetActive(true);
         }
         if(health<=0)
         {
             hearts[0].SetActive(false);
+            SFX[2].SetActive(true);
             GameOverDisplay.SetActive(true);
             CanDo = false;
         }
@@ -106,6 +110,7 @@ public IEnumerator LoadNextGame()
          CurrentTime=0f;
           HastLoad=false;
           CanDo=true;
+          MaxTime-=1;
         SceneManager.LoadScene("Basket");
     }
 }

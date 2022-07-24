@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class Broom : MonoBehaviour
@@ -7,6 +8,7 @@ public class Broom : MonoBehaviour
     public int Counter;
 [SerializeField] private Rigidbody2D rb;
 [SerializeField] private float moveSpeed=5f;
+[SerializeField] private AudioSource SFX;
     Vector2 movement;
     Timer Tim;
     private bool addedScore;
@@ -29,6 +31,7 @@ public class Broom : MonoBehaviour
             if(!addedScore)
             {
                 Tim.score++;
+                SFX.Play();
                 addedScore = !addedScore;
             }
             Tim.CanDo=false;

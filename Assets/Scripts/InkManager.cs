@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 using UnityEngine;
 
 public class InkManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class InkManager : MonoBehaviour
     public bool[] IsInked;
     Timer Tim;
     private bool addedScore;
+    [SerializeField] private AudioSource SFX;
 
 void Start()    
 {
@@ -25,6 +27,7 @@ void Start()
                     if(!addedScore)
                     {
                     Tim.score++;
+                    SFX.Play();
                     addedScore = !addedScore;
                     }
                     StartCoroutine(Tim.LoadNextGame());
