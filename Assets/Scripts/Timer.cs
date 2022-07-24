@@ -8,6 +8,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public bool TimerUp;
+    public bool CanDo=true;
     public int health=3;
     [SerializeField] private float MaxTime;
     [SerializeField] private float TransTime=1f;
@@ -23,6 +24,8 @@ void Awake()
 }
     void Update()
     {
+        if(CanDo)
+        {
         if(CurrentTime >= MaxTime)
         {
             if(health!=0 && TimerUp==false)
@@ -61,8 +64,9 @@ void Awake()
         HastLoad=true;
         }
     }
+        }
     }
-IEnumerator LoadNextGame()
+public IEnumerator LoadNextGame()
 {
     if(SceneManager.GetActiveScene().name=="Basket")
     {
@@ -70,6 +74,7 @@ IEnumerator LoadNextGame()
         TimerUp=false;
         CurrentTime=0f;
          HastLoad=false;
+         CanDo=true;
         SceneManager.LoadScene("Ink");
     }
     if(SceneManager.GetActiveScene().name=="Ink")
@@ -78,6 +83,7 @@ IEnumerator LoadNextGame()
          TimerUp=false;
          CurrentTime=0f;
           HastLoad=false;
+          CanDo=true;
         SceneManager.LoadScene("Broom");
     }
     if(SceneManager.GetActiveScene().name=="Broom")
@@ -86,6 +92,7 @@ IEnumerator LoadNextGame()
          TimerUp=false;
          CurrentTime=0f;
           HastLoad=false;
+          CanDo=true;
         SceneManager.LoadScene("Basket");
     }
 }

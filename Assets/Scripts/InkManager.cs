@@ -5,6 +5,13 @@ using UnityEngine;
 public class InkManager : MonoBehaviour
 {
     public bool[] IsInked;
+    Timer Tim;
+
+void Start()    
+{
+    Canvas Can = FindObjectOfType<Canvas>();
+    Tim = Can.GetComponent<Timer>();
+} 
     void Update()
     {
         if(IsInked[0] && IsInked[1])
@@ -13,15 +20,10 @@ public class InkManager : MonoBehaviour
             {
                 if(IsInked[4])
                 {
-                    StartCoroutine(Ender());
+                    Tim.CanDo=true;
+                    StartCoroutine(Tim.LoadNextGame());
                 }
             }
         }
-    }
-
-    IEnumerator Ender()
-    {
-        Debug.Log("Ya did it!");
-        yield return new WaitForSeconds(0f);
     }
 }

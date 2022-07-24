@@ -8,6 +8,13 @@ public class Broom : MonoBehaviour
 [SerializeField] private Rigidbody2D rb;
 [SerializeField] private float moveSpeed=5f;
     Vector2 movement;
+    Timer Tim;
+
+    void Start()    
+{
+    Canvas Can = FindObjectOfType<Canvas>();
+    Tim = Can.GetComponent<Timer>();
+} 
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -18,7 +25,8 @@ public class Broom : MonoBehaviour
 
         if(Counter == 3)
         {
-            Debug.Log("Yayyy it's clean!");
+            Tim.CanDo=false;
+            StartCoroutine(Tim.LoadNextGame());
         }
     }
 }

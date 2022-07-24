@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerUp: 0
+  CanDo: 1
   health: 3
   MaxTime: 5
   TransTime: 1
@@ -822,6 +823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edc5b12b9d424f46b1c45b74cf201e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ball: {fileID: 1530712529}
+  Tim: {fileID: 130845290}
 --- !u!61 &1977062048
 BoxCollider2D:
   m_ObjectHideFlags: 0

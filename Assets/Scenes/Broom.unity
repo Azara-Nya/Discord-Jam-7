@@ -945,6 +945,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1064511856}
     - target: {fileID: 8636726633782137478, guid: 28062f7df32012a44ab4e80c2200103f, type: 3}
+      propertyPath: maxTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636726633782137478, guid: 28062f7df32012a44ab4e80c2200103f, type: 3}
       propertyPath: SpawnerPoint1
       value: 
       objectReference: {fileID: 1506473397}
