@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Basket.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Broom.unity
+    guid: 3694f4e4960904c45ba7d3deda4f98bf
+  - enabled: 1
+    path: Assets/Scenes/Ink.unity
+    guid: cd999fece7e4426479079bf9e4e7e86c
   m_configObjects: {}
