@@ -10,10 +10,13 @@ public class Timer : MonoBehaviour
     public bool TimerUp;
     public bool CanDo=true;
     public int health=3;
+    public bool OffMenu=false;
     [SerializeField] private float MaxTime;
     [SerializeField] private float TransTime=1f;
+    [SerializeField] private GameObject GamePanel;
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] private GameObject[] hearts;
+    [SerializeField] private GameObject GameOverDisplay;
     private bool HastLoad;
     private float CurrentTime;
 
@@ -24,6 +27,12 @@ void Awake()
 }
     void Update()
     {
+        if(OffMenu)
+    {
+        if(health==3)
+        {
+           GamePanel.SetActive(true);
+        }
         if(CanDo)
         {
         if(CurrentTime >= MaxTime)
@@ -51,8 +60,8 @@ void Awake()
         if(health<=0)
         {
             hearts[0].SetActive(false);
-            Debug.Log("GameOver");
-            Debug.Log("Display Score yada yada");
+            GameOverDisplay.SetActive(true);
+            CanDo = false;
         }
 
 
@@ -65,6 +74,7 @@ void Awake()
         }
     }
         }
+    }
     }
 public IEnumerator LoadNextGame()
 {

@@ -7,6 +7,12 @@ public class BasketBallHoop : MonoBehaviour
     [SerializeField] private GameObject Ball;
     [SerializeField] private Timer Tim;
 
+
+void Start()    
+{
+    Canvas Can = FindObjectOfType<Canvas>();
+    Tim = Can.GetComponent<Timer>();
+} 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("BasketBall"))
