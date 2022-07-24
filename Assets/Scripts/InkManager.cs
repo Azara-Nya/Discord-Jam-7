@@ -6,6 +6,7 @@ public class InkManager : MonoBehaviour
 {
     public bool[] IsInked;
     Timer Tim;
+    private bool addedScore;
 
 void Start()    
 {
@@ -21,6 +22,11 @@ void Start()
                 if(IsInked[4])
                 {
                     Tim.CanDo=true;
+                    if(!addedScore)
+                    {
+                    Tim.score++;
+                    addedScore = !addedScore;
+                    }
                     StartCoroutine(Tim.LoadNextGame());
                 }
             }

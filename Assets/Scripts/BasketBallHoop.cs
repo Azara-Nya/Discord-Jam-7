@@ -19,8 +19,8 @@ void Start()
         {
             Destroy(Ball);
             Tim.CanDo=false;
+            Tim.score++;
             StartCoroutine(Tim.LoadNextGame());
-            Debug.Log("Ya done good");
         }
     }
 }

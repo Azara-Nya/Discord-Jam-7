@@ -10,8 +10,9 @@ public class Timer : MonoBehaviour
     public bool TimerUp;
     public bool CanDo=true;
     public int health=3;
+    public int score;
     public bool OffMenu=false;
-    [SerializeField] private float MaxTime;
+    [SerializeField] float MaxTime;
     [SerializeField] private float TransTime=1f;
     [SerializeField] private GameObject GamePanel;
     [SerializeField] private TextMeshProUGUI ScoreText;
@@ -19,6 +20,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject GameOverDisplay;
     private bool HastLoad;
     private float CurrentTime;
+    private int counter;
+    private int counterlast;
 
 
 void Awake()

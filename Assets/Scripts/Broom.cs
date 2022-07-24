@@ -9,6 +9,7 @@ public class Broom : MonoBehaviour
 [SerializeField] private float moveSpeed=5f;
     Vector2 movement;
     Timer Tim;
+    private bool addedScore;
 
     void Start()    
 {
@@ -25,6 +26,11 @@ public class Broom : MonoBehaviour
 
         if(Counter == 3)
         {
+            if(!addedScore)
+            {
+                Tim.score++;
+                addedScore = !addedScore;
+            }
             Tim.CanDo=false;
             StartCoroutine(Tim.LoadNextGame());
         }

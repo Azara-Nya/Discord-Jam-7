@@ -693,6 +693,7 @@ MonoBehaviour:
   TimerUp: 0
   CanDo: 1
   health: 3
+  score: 0
   OffMenu: 0
   MaxTime: 10
   TransTime: 1
@@ -716,6 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tim: {fileID: 5467955291990616193}
+  text: {fileID: 2460564220496877575}
 --- !u!1 &5467955292622008161
 GameObject:
   m_ObjectHideFlags: 0
