@@ -49,7 +49,7 @@ void Awake()
         }
         else
         {
-            CurrentTime += Time.fixedDeltaTime/7;
+            CurrentTime += Time.fixedDeltaTime;
         }
         ScoreText.text = $"{Math.Round(CurrentTime)}";
 
